@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+
 import Library from './library/library';
 import Schedule from './schedule/schedule';
-import Gradient from './gradient';
 
 class Home extends Component {
   render() {
