@@ -5,36 +5,38 @@ import * as actions from "../../actions";
 import Icon from "../icon";
 import Arrow from "../arrow";
 import Action from "../action";
-
-//import AnimateHeight from "react-animate-height";
+import library from "./library";
 
 class LibraryCourse extends Component {
+
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      status: true,
-      height: 0
-    };
+      status: true
+    }
   }
 
-  handleCallback = function(status) {
-    let height = this.state.height == 0 ? 'auto' : 0;
-    if (!status) {
-      document.getElementById(this.id).classList.add("library-course-selected");
-    } else {
-      document.getElementById(this.id).classList.remove("library-course-selected");
+  renderDescription = function() {
+    if(!this.state.status) {
+      return (
+      <div className="library-course__description">
+          <label>Course Description</label>
+          <p>
+            { this.props.description }
+          </p>
+        </div>
+      )
     }
-    this.setState({ 
-      status,
-      height
-    });
   }.bind(this);
 
+  handleCallback = function(status) {
+    this.setState({ status })
+  }.bind(this)
+
   render() {
-    this.id = `library-course-${this.props.id}`;
     return (
-      <div id={this.id} className="library-course">
+      <div id="library_course" className="library-course">
         <div className="library-course__title-check">
           <div className="library-course__title">{this.props.title}</div>
           { this.props.enrolled ? Icon("fas fa-check", "library-course__icon") : ''}
@@ -49,15 +51,7 @@ class LibraryCourse extends Component {
           onClick={() => this.props.toggleEnrolled(this.props.id)}
           className={`library-course__action ${this.props.enrolled ? 'action-remove' : ''}`}
         />
-        {/*<AnimateHeight
-          duration={300}
-          height={this.state.height}
-        >*/}
-          <div className="library-course__description">
-            <label>Course Description</label>
-            <p>{this.props.description}</p>
-          </div>
-        {/*</AnimateHeight>*/}
+        { this.renderDescription() }
       </div>
     );
   }
