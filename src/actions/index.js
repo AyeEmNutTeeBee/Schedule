@@ -16,26 +16,26 @@ export function fetchCourses() {
         payload: [
             {
                 id: 0,
-                title: "Course 1",
-                description: "This is Course 1",
+                title: "Level Design",
+                description: "This course will guide you through on how to make different areas unique in both aesthetics and level design.",
                 enrolled: false
             },
             {
                 id: 1,
-                title: "Course 2",
-                description: "This is Course 2",
+                title: "Build a house using dirt",
+                description: "You will cast down your arrogance and burn your diamonds; as by choosing this course, you will be be taught the ways of Twinkle Winkle Dinkle.",
                 enrolled: false
             },
             {
                 id: 2,
-                title: "DNA Basics",
+                title: "DNA Basics for Kids",
                 description: "This course will teach you the fundamentals of DNA coding, and how to implement over 40 different genetic modifications to butterflies; Ranging from bioluminescent wings to extreme agression towards caterpillars.",
                 enrolled: false
             },
             {
                 id: 3,
-                title: 'Problem Solving',
-                description: 'In this course you\'ll take a practical look at how to build a large number of software applications and features. By taking a systems analysis and design approach to development and leveraging UML, you\'ll be able to model systems and prepare to build the projects.',
+                title: 'Guide to becoming an Arpekan Citizen',
+                description: '[REDACTED]',
                 enrolled: false
             },
             {
